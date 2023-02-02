@@ -1,0 +1,13 @@
+<?php
+
+$con=mysqli_connect('localhost','bwyun','yshs1488*','bwyun');
+$sql="delete from memo where no='$_GET[no]';";
+//echo $sql;
+$result = mysqli_query($con,$sql);
+
+mysqli_close($con);
+?>
+
+<script>
+  location.href='f.html'
+</script>

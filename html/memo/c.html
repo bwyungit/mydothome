@@ -1,0 +1,30 @@
+<meta charset="utf-8">
+<table width=600 border=1>
+  <tr>
+    <th>No
+    <th>이름
+    <th>메모
+    <th>시간
+  
+  
+<?php
+$con=mysqli_connect('localhost','bwyun','yshs1488*','bwyun');
+$sql="select * from memo;";
+//echo $sql;
+$result = mysqli_query($con,$sql);
+
+while($row = mysqli_fetch_array($result)){
+?>
+  <tr>
+    <td><?echo $row['no']?>
+    <td><a href=mailto:<?=$row['email']?>><?=$row['name']?></a>
+    <td><?=$row['memo']?>
+    <td><?=substr($row['regdate'],5,11)?>
+<?
+}
+?>
+
+
+<?mysqli_close($con);?>
+
+</table>

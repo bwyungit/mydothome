@@ -1,0 +1,26 @@
+
+<script>
+  var grades ={
+    'list' : {'egoing':10, 'k8805':9, 'dkdkdk':7},
+    'show' : function(){
+                for (var name in this.list){
+                  document.write(name + ' : ' + this.list[name]+'<br>')
+                }
+              }
+  }
+
+  alert(grades['list']['egoing']);
+
+  grades['show']();
+  
+  
+    var grades2 ={
+    'list' : [10, 9, 7],
+    'show' : function(){
+                for (var name in this.list){
+                  document.write(this.list[name]+'<br>')
+                }
+              }
+  }
+    grades2['show']();
+</script>

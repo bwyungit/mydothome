@@ -1,0 +1,31 @@
+<?
+  include 'func.php';
+  
+  $con=con_open();
+  //$con=mysqli_connect('localhost','bwyun','yshs1488*','bwyun');
+  $table_name='php_memo';
+
+  //echo nl2br($_GET['ta']);
+
+$sql = "insert into $table_name (category, subject, contents,ip,pw) 
+        values('$_GET[category]','$_GET[subject]','$_GET[contents]','".$_SERVER['REMOTE_ADDR']."','$_GET[pw]');";
+
+$result = mysqli_query($con,$sql);
+if($result){
+  echo "<br>result : ".$result;
+  echo "
+    <script>
+       window.alert('자료입력이 완료되었습니다.'); 
+       location.href='index.html';
+    </script>  
+       ";
+}
+
+
+
+
+$end = mysqli_close($con);
+echo "<br> Connection closed!<br>";
+
+?>
+

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cloneNode2</title>
+    <style>
+        #circle{width: 20px; height: 20px; background: red; border-radius: 50%;
+                animation: drop 1s infinite; position: absolute;        }
+        @keyframes drop{
+            0%{margin-top: 0;}
+            100%{margin-top: 200px;}
+        }
+    </style>
+</head>
+<body>
+    <div id="circle"></div>
+    
+
+    <script>
+        let c = document.getElementById("circle");
+        for (let i=0;i<100;i++){
+            let newc = c.cloneNode(true);
+            newc.style.left= Math.random()*window.innerWidth+"px";
+            newc.style.top= Math.random()*window.innerHeight+"px";
+            var r =3*Math.random();
+            console.log(r);
+            newc.style.animationDuration=r+"s";
+            document.body.appendChild(newc);
+            console.log(window.innerWidth , window.innerHeight);
+        }
+
+        function randomBH(min,max){
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random()*(max-min+1))+min;
+            
+        }
+    </script>
+</body>
+</html>

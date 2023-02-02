@@ -1,0 +1,45 @@
+<?
+  $con=mysqli_connect('localhost','bwyun','yshs1488*','bwyun');
+  
+  //$table_name='php_member';
+  
+  $sql=" insert into php_member (user_id,pw,name,email,memo)
+         values('$_POST[user_id]',
+                '$_POST[pw]', 
+                '$_POST[name]',
+                '$_POST[email]',
+                '$_POST[memo]');";
+
+  $result = mysqli_query($con,$sql);
+  
+  echo $result;
+  
+  if($result){
+    echo "insert query : $result<br>";
+    echo "
+      <script>
+        window.alert('$_POST[name]님 회원가입을 축하합니다')
+        location.href='p.html'
+      </script>
+         ";
+  } else {
+    echo "
+      <script>
+        window.alert('$_POST[name]님 이미 가입되어 있습니다.')
+        //location.href='p.html'
+      </script>
+         ";
+    echo "insert query : $sql<br>";
+    echo $result;
+  
+  }
+  
+  $sql="select * from php_member;";
+  $result = mysqli_query($con,$sql);
+  $recordcount = mysqli_num_rows($result);
+  echo "recordcount : ".$recordcount;
+  $row = mysqli_fetch_array($result);
+
+    
+  $result = mysqli_close($con);
+?>

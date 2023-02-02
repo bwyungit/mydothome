@@ -1,0 +1,31 @@
+<?
+
+echo $_POST['id']."/".$_POST['pw'];
+echo "<br><br>";
+
+$fp = fopen("member.dat","r");
+
+  while($tmp = fgets($fp,500)){;
+    echo $tmp;
+    $a = explode("/",$tmp);
+    
+    if($a[0]==$_POST['id'] and $a[1]==$_POST['pw']){
+      echo  "<script>alert('".$_POST['id']."님  반가워요 어서오세요!!!')</script>" ;
+      setcookie("member","ok",time()+10);
+      goto zz;
+    } 
+  }
+  
+  echo "<script>alert(' 넌 누구나?')</script>" ;
+  echo "<br>";
+ 
+zz:  
+fclose($fp);
+
+?>
+<script>
+
+  //location.href="login.html";
+  //history.back(1);
+</script>
+

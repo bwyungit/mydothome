@@ -1,0 +1,33 @@
+<?
+  include 'func.php';
+  $con=con_open();
+  //$con=mysqli_connect('localhost','bwyun','yshs1488*','bwyun');
+  $table_name='php_memo';
+  
+$sql="select * from $table_name where no='$_GET[no]';";
+//echo $sql;
+
+$result = mysqli_query($con,$sql);
+$row = mysqli_fetch_array($result);
+?>
+
+<form action=edit_post.html method=post>
+      <input type=hidden name=no value="<?=$_GET['no']?>">
+  <li>category : <input type=text name=category size=20 value="<?=$row['category']?>">
+  <li>subject : <input type=text name=subject size =50 value="<?=nl2br($row['subject'])?>">
+  <li>contents : <input type=text name=contents size=20 value="<?=nl2br($row['contents'])?>">
+      <input type=submit value=수정하기>
+</form>
+
+
+
+<?=$row['category']?> / <?=$row['contents']?>
+
+
+<?
+ mysqli_close($con); 
+?>
+
+<script>
+//  location.href='f.html'
+</script>

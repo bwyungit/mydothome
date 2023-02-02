@@ -1,0 +1,67 @@
+<?
+function assa($msg){
+  echo "
+    <script>
+      window.alert('$msg')
+      history.back(1)
+    </script> ";
+  exit;
+}
+
+if(!$_GET[name])assa('이름을 입력해 주세요');
+if(!$_GET[email])assa('이메일을 입력해 주세요');
+if(!$_GET[memo])assa('메모를 입력해 주세요');
+
+if(!$_GET[name]){
+  echo "
+    <script>
+      window.alert('이름을 입력해 주세요..Hi')
+      history.back(1)
+      
+    </script>
+    ";
+    exit;
+}
+if(!$_GET[email]){
+  echo "
+    <script>
+      window.alert('이메일을 입력해 주세요..Hi')
+      history.back(1)
+      
+    </script>
+    ";
+    exit;
+}
+
+ 
+    $hostname = "localhost";
+    $username = "bwyun";
+    $password = "yshs1488*";
+    $database = "bwyun";
+    
+$con = mysqli_connect($hostname,$username,$password,$database);
+
+//*연결확인하기
+if ($con){
+    echo "Connection Success!";
+} else {
+    error_log('Connection error: ' . mysqli_connect_error());
+}
+
+$sql = "insert into memo (name,email,memo,ip) 
+        values('$_GET[name]','$_GET[email]','$_GET[memo]','".$_SERVER['REMOTE_ADDR']."');";
+
+echo "<br>$sql";
+
+$result = mysqli_query($con,$sql);
+echo "<br>result : ".$result;
+
+
+$end = mysqli_close($con);
+echo "<br> Connection closed!<br>";
+
+?>
+
+<script>
+  location.href='g.html';
+</script>

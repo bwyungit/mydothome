@@ -1,0 +1,9 @@
+<?
+  phpinfo();
+  echo var_dump($_FILE).'<br>';
+  
+  echo $_GET['assa'];
+  
+  $result = move_uploaded_file($_GET['assa'], "./data/".$_GET['assa']);
+  echo $result;
+  ?>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계산기만들기</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="screen" id="screen"> 0</div>
+        <div class="buttons">
+            <div class="button gray" onclick="Clear()">AC</div>
+            <div class="button gray" onclick="insert(this)">+/-</div>
+            <div class="button gray" onclick="insert(this)">%</div>
+            <div class="button orange" onclick="insert(this)">/</div>
+            <div class="button" onclick="insert(this)">7</div>
+            <div class="button" onclick="insert(this)">8</div>
+            <div class="button" onclick="insert(this)">9</div>
+            <div class="button orange" onclick="insert(this)">*</div>
+            <div class="button" onclick="insert(this)">4</div>
+            <div class="button" onclick="insert(this)">5</div>
+            <div class="button" onclick="insert(this)">6</div>
+            <div class="button orange" onclick="insert(this)">-</div>
+            <div class="button" onclick="insert(this)">1</div>
+            <div class="button" onclick="insert(this)">2</div>
+            <div class="button" onclick="insert(this)">3</div>
+            <div class="button orange" onclick="insert(this)">+</div>
+            <div class="button" onclick="insert(this)">0</div>
+            <div class="button" onclick="insert(this)">.</div>
+            <div class="button" onclick="insert(this)">()</div>
+            <div class="button orange" onclick="calc()">=</div>
+        </div>
+    </div>
+<script>
+    var screen = document.getElementById("screen");
+    function insert(e){
+        console.log(screen.innerHTML);
+        console.log(screen.innerText);
+        console.log(e.innerHTML)
+        console.log(e.innerText)
+        console.log(e.value)
+
+        if(screen.innerHTML=="0"){
+            screen.innerHTML = e.innerHTML;
+            console.log(true);
+        } else {
+            screen.innerHTML += e.innerHTML;
+            console.log(false);
+        }
+    }
+
+    function calc(){screen.innerHTML = eval( screen.innerHTML);    }
+    function Clear(){screen.innerHTML = "0";    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<?
+  
+  function assa($temp){
+    echo "<li>";
+    echo $temp."님 환영합니다.";
+    }
+  assa("구명석");
+  assa("서기");
+  assa("홍길동");
+  assa("고등어");
+  assa("나물이네");
+  assa("멋있다");
+  
+  
+  echo '<br><br>';
+  
+  global $c;
+  $c = 123;
+  
+  function aaa($a){
+    //global $one;
+    $one = 987.8;
+    
+    //global $c;
+    $c=$a*$one;
+    //echo $c;
+    
+    //echo $c;
+    return $c;
+  }
+
+  $b = aaa(3);
+  echo $b; echo "<br>";
+  echo $c; echo "<br>";
+  echo $one; echo "<br>";
+  
+?>

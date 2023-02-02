@@ -1,0 +1,19 @@
+<table width=600 border=1>
+  <tr>
+    <td>No
+    <td>이름
+    <td>메모
+    <td>시간
+  
+  
+<?
+$con=mysqli_connect('localhost','bwyun','yshs1488*','bwyun');
+$sql="select * from memo;"   ;
+$result=mysql_query($con,$sql);
+
+
+
+?>
+
+</table>
+<? mysqli_close($con);?>

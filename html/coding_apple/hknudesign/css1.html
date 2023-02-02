@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트로 스타일링 하기</title>
+    <style>
+        #redSquare {
+            width: 200px;
+            height: 200px;
+            background: red;
+            margin: auto;
+            margin-top: 200px;
+        }
+
+        #transBut {
+            width: 100px;
+            height: 40px;
+            text-align: center;
+            vertical-align: center;
+            
+            line-height: 200xp;
+            background:none;
+            border: 1px solid black;
+            border-radius: 10px;
+            margin: auto;
+            margin-top: 50px;
+           
+        }
+
+        #myCode{
+            width: 300px;
+            position: absolute;
+            left: 50px;
+            top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="redSquare"></div>
+    <div id="transBut">뽕</div>
+    <img src="code1.jpg" id="myCode">
+    <audio id="testMusic">
+        //<source src="canonD.mp4" type="audio/mpeg">
+    </audio>
+    <div id="subject_music"></div>
+
+    <script>
+             let toggle=true;       
+        myCode.onclick=function(){
+
+            if(toggle) {
+                myCode.setAttribute("src","code2.jpg");
+                var subject ="canonD.mp4"
+                testMusic.src=subject;
+                console.log(testMusic.currentSrc);
+                testMusic.play();
+                console.log(testMusic.currentSrc);
+                //subject_music.innerHTML=subject;
+                subject_music.innerHTML=testMusic.currentSrc;
+                console.log(toggle);
+                toggle = !toggle;
+            } else{
+                myCode.setAttribute("src","code1.jpg");
+                var subject ="tomo.mp3"
+                testMusic.src=subject;
+                console.log(testMusic.currentSrc);
+                testMusic.play();
+                console.log(testMusic.currentSrc);
+                //subject_music.innerHTML=subject;   
+                subject_music.innerHTML=testMusic.currentSrc;
+
+                console.log(toggle);
+                toggle = !toggle;
+            }
+        }
+
+        transBut.onclick=function (){
+            var color = redSquare.style.background;
+            console.log(color);
+
+            if(toggle){
+                redSquare.style.background='green';
+                redSquare.style.width="300px";
+                redSquare.style.borderRadius="30%";
+                redSquare.innerHTML="녹색 타원이야";
+                redSquare.style.textAlign="center";
+                redSquare.style.lineHeight="200px";
+                console.log('green1');
+                toggle=!toggle;
+                
+            } else {
+                redSquare.style.background='red';
+                redSquare.style.width="200px";
+                redSquare.style.height="200px";
+                redSquare.innerHTML="빨강 네모야";
+                redSquare.style.textAlign="center";
+                redSquare.style.lineHeight="200px";
+                console.log('red1');
+                toggle=!toggle;
+            }  
+                     
+            //console.log(color);
+            subject_music.innerHTML=redSquare.style.background;
+            //console.log(subject_music.innerHTML);
+        }
+        
+    </script>
+</body>
+</html>

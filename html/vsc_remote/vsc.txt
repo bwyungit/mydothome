@@ -1,0 +1,2 @@
+vsc test
+how to pusth my directory

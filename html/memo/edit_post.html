@@ -1,0 +1,29 @@
+<?
+
+$con=mysqli_connect('localhost','bwyun','yshs1488*','bwyun');
+$sql="update memo set name='$_POST[name]',email='$_POST[email]',memo='$_POST[memo]' where no='$_POST[no]';";
+echo "query string : $sql<br>";
+$result = mysqli_query($con,$sql);
+echo "result : $result";
+
+if($result){
+  echo "
+    <script>
+      window.alert('자료가 수정되었습니다.')
+      location.href='p.html';
+    </script>
+      ";
+} else {
+  echo "
+    <script>
+      window.alert('자료가 수정되지 않았습니다.')
+      //location.href='p.html';
+    </script>
+      ";
+}
+
+
+
+mysqli_close($con);
+
+?>

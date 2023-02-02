@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu 만들기</title>
+    <style>
+        .menu_off {
+            width: 100px;
+            border: 1px solid #999999;
+            padding: 5px;
+            text-align: center;
+            float: left;
+            margin-right:15px ;
+            border-radius: 50%;
+            cursor:pointer;
+        }
+
+        .menu_on {
+            width: 100px;
+            background-color: #eeeeee;
+            border: 1px solid #999999;
+            padding: 5px;
+            text-align: center;
+            float: left;
+            margin-right:15px;
+            border-radius: 20%;
+            font-weight: bolder;
+            cursor:pointer;
+            color: red;
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <div class="menu_off" onmouseover="menuon(this);" onmouseout="menuoff(this);">메뉴 1</div>
+    <div class="menu_off" onmouseover="menuon(this);" onmouseout="menuoff(this);">메뉴 2</div>
+    <div class="menu_off" onmouseover="menuon(this);" onmouseout="menuoff(this);">메뉴 3</div>
+    <div class="menu_off" onmouseover="menuon(this);" onmouseout="menuoff(this);">메뉴 4</div>
+    
+
+<script>
+    function menuon(e){ e.setAttribute('class', 'menu_on');    }
+    function menuoff(e){ e.setAttribute('class', 'menu_off');    }
+</script>
+</body>
+</html>

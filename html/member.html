@@ -1,0 +1,24 @@
+<html>
+
+<?
+
+  if($_COOKIE['member']=="ok") echo "회원님 환영합니다";
+  else echo "넌 누구냐?";
+
+?>
+
+<script>
+  //a();
+  window.alert("<?=$_GET['name']?>" + "님아  안녕! 회원가입 축하해!!!"  );
+  window.confirm("would you like to comfirm?");
+  var val = prompt("이름을 입력해 주세요");
+  document.write("<br><br> " + val +" 님 헤헤헤!!!!: from window.prompt and document.write ");
+  
+    
+  //a("가입이 정상적으로 처리되었습니다!!");
+  //location.href="join.html";
+  
+  document.write("<br><br>헤헤헤: from document.write ");
+
+</script>
+</html>

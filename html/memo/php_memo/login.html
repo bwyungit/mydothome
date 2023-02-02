@@ -1,0 +1,22 @@
+<script>
+  function chk_form(){
+    if(!document.login.user_id.value){
+      window.alert('아이디를 입력하세요');
+      document.login.user_id.focus();
+      return false;}  
+  
+    if(!document.login.pw.value){
+      window.alert('비밀번호를 입력하세요');
+      document.login.pw.focus();
+      return false;}  
+  
+    return true;
+  }
+</script>
+
+
+<form action=login_post.html method=post onsubmit="return chk_form()" name=login>
+  <li>아이디 :  <input type=text name=user_id>
+  <li>비밀번호 :  <input type=password name=pw>
+  <li><input type=submit value="로그인">
+</form>

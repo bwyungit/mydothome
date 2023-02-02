@@ -1,0 +1,14 @@
+body{ margin: 0; }
+
+.home{ overflow: hidden; }
+.container{
+    width: 300vw;
+    transition: 0.5s;
+   
+}
+.inner{ width: 100vw;    float: left;}
+.inner img{width: 100%;}
+.btn4{
+    border: 1px solid black;
+    border-radius: 20%;
+}

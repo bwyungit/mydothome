@@ -1,0 +1,66 @@
+<?php
+
+  include 'func.php';
+  $con=con_open();
+  //$con=mysqli_connect('localhost','bwyun','yshs1488*','bwyun');
+  $table_name='php_memo';
+
+
+  if(!$_POST['no']){
+    echo "
+      <script>
+        window.confirm('no값이 없습니다.')
+        location.href='del.html'
+      </script>    
+    ";
+    exit;
+  }
+  
+  if(!$_POST['pw']){
+    echo "
+      <script>
+        window.confirm('비밀번호를 입력하셔야 합니다.')
+        location.href='del.html?no=$_POST[no]'
+      </script>    
+    ";
+    exit;
+  }
+  
+  
+  $con=con_open();
+  $sql="select pw from $table_name where no='$_POST[no]';";
+
+
+  
+  echo $sql;
+  $result = mysqli_query($con,$sql);
+  $row = mysqli_fetch_array($result);
+  
+  
+  if($row[0]!==$_POST['pw']){
+    echo "
+      <script>
+        window.confirm('비밀번호가 일치하지 않습니다.')
+        location.href='del.html?no=$_POST[no]'
+      </script>    
+    ";
+    exit;
+  }
+  
+  $sql="delete from $table_name where no='$_POST[no]';";
+  $result = mysqli_query($con,$sql);
+  echo "<br>$sql";
+  if(!$result){
+    echo '삭제되지 않았습니다.';
+  } else {
+    echo '자료가 삭제되었습니다.';
+    echo "
+      <script>
+        window.confirm('자료가 삭제되었습니다.')
+        location.href='index.html'
+      </script>    
+    ";
+  }
+  mysqli_close($con);
+?>
+

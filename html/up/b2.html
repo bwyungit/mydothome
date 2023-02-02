@@ -1,0 +1,17 @@
+<?php
+// 설정
+$uploads_dir = './data';
+$name = $_FILES['myfile']['name'];
+//$ext = array_pop(explode('.', $_FILES['myfile']['name']));
+ 
+// 파일 이동
+move_uploaded_file( $_FILES['myfile']['tmp_name'], "$uploads_dir/$name");
+
+// 파일 정보 출력
+echo "파 일 명: ".$_FILES['myfile']['name']."<br>";
+echo "임시파일명: ".$_FILES['myfile']['tmp_name']."<br>";
+echo "파일 타입: ".$_FILES['myfile']['type']."<br>";
+echo "파일 크기: ".$_FILES['myfile']['size']."<br>";
+
+
+?>

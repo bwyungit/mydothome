@@ -1,0 +1,45 @@
+<?
+
+    $hostname = "localhost";
+    $username = "bwyun";
+    $password = "yshs1488*";
+    $database = "bwyun";
+    
+$con = mysqli_connect($hostname,$username,$password,$database);
+
+//*연결확인하기
+if ($con){
+    echo "Connection Success!";
+} else {
+    error_log('Connection error: ' . mysqli_connect_error());
+}
+
+
+//*연결상태보기
+$stats = mysqli_get_links_stats();
+echo "<br>mysqli_get_links_stats : ".mysqli_get_links_stats();
+
+echo "<br>stats['total'] : ".$stats['total'];
+echo "<br>stats['active_plinks'] : ".$stats['active_plinks'];
+echo "<br>stats['cached_plinks'] : ".$stats['cached_plinks'];
+
+
+//if (!$con) {
+//  error_log('Connection error: ' . mysqli_connect_error());
+//}
+
+$sql = "insert into memo (name,email,memo,ip) 
+        values('병운','dfj@dfjls.df','안녕하세요.','".$_SERVER['REMOTE_ADDR']."');";
+
+echo "<br>$sql";
+$result = mysqli_query($con,$sql);
+echo "<br>result : ".$result;
+
+$end = mysqli_close($con);
+echo "<br> connection closed!";
+
+echo "<br> time() : ".time();
+//echo "<br> now() : ".now();
+//echo "<br> date() : ".date();
+//echo "<br> datetime() : ".datetime();
+?>

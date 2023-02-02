@@ -1,0 +1,70 @@
+<style>
+  input, td{
+    font-size:8pt 
+    font-family:돋움
+    }
+
+input[type=button] {
+border:1x solid #ff0080;    /*---테두리 정의---*/
+background-Color:#ffe6f2;   /*--백그라운드 정의---*/
+font:12px 굴림;      /*--폰트 정의---*/
+font-weight:bold;   /*--폰트 굵기---*/
+color:#ff0080;    /*--폰트 색깔---*/
+width:130;height:30;  /*--버튼 크기---*/
+}
+
+
+  input[type=submit]{
+    background-color:#04AA6D; 
+                  padding: 10px 22px;
+                  font-size:11pt; 
+                  margin: 14px 21px;
+                  border: none;
+                  cursor: pointer;
+                  color: white;
+  
+  }
+
+
+//input[type=button], input[type=submit], input[type=reset] {
+//  background-color: #04AA6D;
+//  border: none;
+//  color: white;
+//  padding: 16px 32px;
+//  text-decoration: none;
+//  margin: 4px 2px;
+//  cursor: pointer;
+//}
+
+//background-Color:#ffe6f2
+</style>
+
+<a href=index.html> 홈</a>
+
+<form action=join_post.html method="post">
+<table width=500 border=1 align=center>
+  <col width=100>
+  <col>
+  <tr>
+    <td>이름
+    <td><input type=text name="name" size=10>
+  <tr>
+    <td>아이디
+    <td><input type=text name="id" size=10>
+  <tr>
+    <td>비밀번호
+    <td><input type=password name="pw" size=10>
+  <tr>
+    <td>이메일
+    <td><input type=password name="email" size=20>
+  <tr>
+    <td colspan=2 align=center>
+    <input type=button value='button' >
+  
+  <tr>
+    <td colspan=2 align=center>
+    <input type=submit value='가입하기' >
+    
+    
+</table>
+</form>

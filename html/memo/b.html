@@ -1,0 +1,30 @@
+<?
+    $hostname = "localhost";
+    $username = "bwyun";
+    $password = "yshs1488*";
+    $database = "bwyun";
+    
+$con = mysqli_connect($hostname,$username,$password,$database);
+
+//*연결확인하기
+if ($con){
+    echo "Connection Success!";
+} else {
+    error_log('Connection error: ' . mysqli_connect_error());
+}
+
+$sql = "insert into memo (name,email,memo,ip) 
+        values('$_GET[name]','$_GET[email]','$_GET[memo]','".$_SERVER['REMOTE_ADDR']."');";
+
+echo "<br>$sql";
+
+$result = mysqli_query($con,$sql);
+echo "<br>result : ".$result;
+
+
+$end = mysqli_close($con);
+echo "<br> Connection closed!<br>";
+
+?>
+
+메모가 추가되었대요~~

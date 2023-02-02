@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slide</title>
+    <link rel="stylesheet" href="slide.css">
+</head>
+
+<body>
+    <div class="home">
+        <div class="container">
+            <div>
+                <div class="inner"><img src="./img/slide1.jpg" alt="slide1.jpg"></div>
+            </div>
+            <div>
+                <div class="inner"><img src="./img/slide2.jpg" alt="slide2.jpg"></div>
+            </div>
+            <div>
+                <div class="inner"><img src="./img/slide3.jpg" alt="slide3.jpg"></div>
+            </div>
+        </div>
+    </div>
+    <button class="btn1 btn">1</button>
+    <button class="btn2 btn">2</button>
+    <button class="btn3 btn">3</button>
+</body>
+<script>
+    let buttons = document.querySelectorAll('.btn');
+
+        
+    document.querySelector('.btn1').addEventListener('click',function(){
+        document.querySelector('.container').style.transform ='translate(0vw)';
+    } )
+
+    document.querySelector('.btn2').addEventListener('click',function(){
+        document.querySelector('.container').style.transform ='translate(-100vw)';
+    } )
+
+    document.querySelector('.btn3').addEventListener('click',function(){
+        document.querySelector('.container').style.transform ='translate(-200vw)';
+    } )
+
+//document.querySelector('.btn3').addEventListener('click',move(3));
+   
+
+    
+
+function move3(){
+        document.querySelector('.container').style.transform='translate(-200vw)';
+    }
+
+    function move(num){
+        let arr = ["translate(0vw)","translate(-100vw)","translate(-200vw)"]
+        if(num=1) document.querySelector('.container').style.transform=arr[num-1];
+        if(num=2) document.querySelector('.container').style.transform=arr[num-1];
+        if(num=3) document.querySelector('.container').style.transform=arr[num-1];
+
+        // document.querySelector('.container').style.transform='translate((-1*(eval(num)-1)*100)vw)';
+        //document.querySelector('.container').style.transform='translate(-1*'+ (num-1) + '*100vw)';
+    }
+</script>
+</html>

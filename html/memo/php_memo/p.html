@@ -1,0 +1,104 @@
+<!--테이블 자료출력화면을 페이징처리하기-->
+
+<style>
+    td,li,input {font-size:12pt}
+    
+    label{
+        font-size: 1.0rem;
+        width:100%;	
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        
+    }
+</style>
+
+<h1 align=center > php_memo 메모장입니다(서기)</h1>
+<form action=m.html>
+  <li><label>category : <input type=text name=category id=category size=50 ></label>
+  <li>subject : &nbsp; <input type=text name=subject size=50>
+  <li>contents : <input type=text name=contents size=50><br>
+  <li>비밀번호 : <input type=text name=pw size=50><br>
+  <input type=submit value="입력" >
+</form>
+
+<table width=700 align=center>
+  <tr>
+    <td align=right>
+    <? if($_COOKIE['bwyun']){ ?>
+         <?=$_COOKIE['bwyun']?>님 환영합니다.
+         <a href=logout.html>로그아웃</a>         
+    <? }else{ ?>    
+         <a href=login.html>로그인</a>
+    <? } ?>
+      <a href=o.html>회원가입</a>
+</table>
+
+<table width=700 border=1 align=center>
+    <col width=50>
+    <col width=80>
+    <col width=100>
+    <col width=280>
+    <col width=90>
+    <col width=40>
+    <col width=40>
+  <tr bgcolor=#99cc00>
+    <th>no
+    <th>category
+    <th>subjecct
+    <th>contents
+    <th>시간
+    <th>수정
+    <th>삭제
+                        
+        
+      
+<?
+  $con=mysqli_connect('localhost','bwyun','yshs1488*','bwyun');
+
+  //한 페이지 화면에 보일 데이터 수
+  $page_num=5; 
+  //맨처음 접속할 때, 시작페이지일때 처음부터 출력하기 위한 값
+  if(!$_GET['start']) $_GET['start']=0;
+  
+  $sql="select count(*) as t from php_memo ;";
+  $result = mysqli_query($con,$sql);
+  $row = mysqli_fetch_array($result);
+  $total =$row['t'];
+  //echo $total;
+
+  $sql="select * from php_memo order by no desc limit $_GET[start],$page_num ;";
+  //echo $sql;
+  $result = mysqli_query($con,$sql);
+
+  while($row = mysqli_fetch_array($result)){
+?>
+  <tr>
+    <td align=center><?echo $row['no']?>
+    <td align=center><?=$row['category']?>
+    <td align=center><?=$row['subject']?>
+    <td><?=$row['contents']?>
+    <td><?=substr($row['regdate'],5,11)?>
+    <td><a href="edit.html?no=<?=$row['no']?>">수정</a>
+    <td><a href="n.html?no=<?=$row['no']?>">삭제</a>
+<?
+}
+?>
+
+
+
+</table>
+<p align=center>
+<?
+$pages=$total/$page_num;
+//echo $pages;
+
+for($i=0;$i<$pages;$i++){
+  $i5=$i*5;
+  echo "<a href=$_SERVER[PHP_SELF]?start=$i5>[$i]</a>";
+}
+
+mysqli_close($con);
+
+?>
+</p>

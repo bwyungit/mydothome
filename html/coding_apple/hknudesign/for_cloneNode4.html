@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>cloneNode4</title>
+    <style>
+        #circle{width: 20px; height: 20px; background: red; border-radius: 50%;
+                animation: drop 2s infinite alternate; position: absolute ;        }
+        @keyframes drop{
+            0%{margin-top: 0;}
+            100%{margin-top: 150px;}
+        }
+    </style>
+</head>
+<body>
+    <div id="circle"></div>
+    
+
+<script>
+    let c = document.getElementById("circle");
+
+    
+    const list = document.getElementById("circle");
+    console.log("list.childElementCount" + list.Count);
+
+    function deleteNodes() {
+        var numb = document.body.childNodes;
+        //let numb = document.getElementById("circle");
+        
+        //console.log(numb.length):
+    }
+    deleteNodes();
+    setInterval(makeClone,3000);
+     console.log("list.childElementCount" + list.childElementCount);
+    function makeClone() {
+        for (let i = 0; i < 10; i++) {
+            let newc = c.cloneNode(true);
+            //newc의 top,left 값 지정하기
+            newc.style.left = randomBH(0, window.innerWidth) + "px";
+            newc.style.top = randomBH(0, window.innerHeight) + "px";
+            newc.style.animationDuration = (3 * Math.random()) + "s";
+            newc.style.background = randomColor();
+            document.body.appendChild(newc);
+            console.log(window.innerWidth, window.innerHeight);
+        }
+    }
+
+
+
+    function randomBH(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+
+    }
+
+    function randomColor() {
+        var r = Math.floor(255 * Math.random());
+        var g = Math.floor(255 * Math.random());
+        var b = Math.floor(255 * Math.random());
+        var text = "rgb(" + r + "," + g + "," + b + ")"
+        return text;
+    }
+
+</script>
+</body>
+</html>

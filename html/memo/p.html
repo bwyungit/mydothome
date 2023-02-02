@@ -1,0 +1,93 @@
+<!--테이블 자료출력화면을 페이징처리하기-->
+
+<style>
+td,li,input {font-size:12pt}
+
+</style>
+
+<h1 align=center > 서기의 메모장입니다</h1>
+<form action=m.html>
+  <li>이름 : <input type=text name=name size=10>
+  <li>이메일 : <input type=text name=email size=30>
+  <li>메모 : <input type=text name=memo size=50><br>
+  <li>비밀번호 : <input type=password name=pw size=20><br>
+  <input type=submit value="입력">
+</form>
+
+<table width=700 align=center>
+  <tr>
+    <td align=right>
+    <? if($_COOKIE['bwyun']){ ?>
+         <?=$_COOKIE['bwyun']?>님 환영합니다.
+         <a href=logout.html>로그아웃</a>         
+    <? }else{ ?>    
+         <a href=login.html>로그인</a>
+    <? } ?>
+      <a href=o.html>회원가입</a>
+</table>
+
+<table width=700 border=1 align=center>
+    <col width=50>
+    <col width=80>
+    <col width=310>
+    <col width=80>
+    <col width=40>
+    <col width=40>
+  <tr bgcolor=#99cc00>
+    <th>No
+    <th>이름
+    <th>메모
+    <th>시간
+    <th>수정
+    <th>삭제
+                        
+        
+      
+<?
+  $con=mysqli_connect('localhost','bwyun','yshs1488*','bwyun');
+
+  //한 페이지 화면에 보일 데이터 수
+  $page_num=5; 
+  //맨처음 접속할 때, 시작페이지일때 처음부터 출력하기 위한 값
+  if(!$_GET['start']) $_GET['start']=0;
+  
+  $sql="select count(*) as t from memo ;";
+  $result = mysqli_query($con,$sql);
+  $row = mysqli_fetch_array($result);
+  $total =$row['t'];
+  //echo $total;
+
+  $sql="select * from memo order by no desc limit $_GET[start],$page_num ;";
+  //echo $sql;
+  $result = mysqli_query($con,$sql);
+
+  while($row = mysqli_fetch_array($result)){
+?>
+  <tr>
+    <td align=center><?echo $row['no']?>
+    <td><a href=mailto:<?=$row['email']?>><?=$row['name']?></a>
+    <td><?=$row['memo']?>
+    <td><?=substr($row['regdate'],5,11)?>
+    <td><a href="edit.html?no=<?=$row['no']?>">수정</a>
+    <td><a href="n.html?no=<?=$row['no']?>">삭제</a>
+<?
+}
+?>
+
+
+
+</table>
+<p align=center>
+<?
+$pages=$total/$page_num;
+//echo $pages;
+
+for($i=0;$i<$pages;$i++){
+  $i5=$i*5;
+  echo "<a href=$_SERVER[PHP_SELF]?start=$i5>[$i]</a>";
+}
+
+mysqli_close($con);
+
+?>
+</p>

@@ -1,0 +1,39 @@
+<?
+  include "./func.php";
+  
+  $con=con_open();
+  
+  print_r($con->table_name);
+  echo '<br>';
+  
+  $sql="select user_id, pw from member;";
+     echo "sql : $sql<br><br>";
+  $result=mysqli_query($con,$sql);
+  $row = mysqli_fetch_array($result);
+   // echo password_hash($row[1],PASS_DEFAULT);
+    echo "<br><br>";
+  
+  $sql="select * from member;";
+    echo "sql : $sql<br><br>";
+  $result=mysqli_query($con,$sql);
+  $fieldscount=mysqli_num_fields($result);
+  $row = mysqli_fetch_array($result);
+  
+  echo "<ol>";
+  while($row=mysqli_fetch_array($result)){
+    echo "<li>";
+    for($i=0;$i<$fieldscount;$i++){
+      echo "$row[$i];";
+    }
+    echo "<br>";
+  
+    //echo "$row[no]-$row[name]-$row[user_id]-$row[regdate]<br>";
+  }
+  
+  
+  
+
+
+
+
+?>

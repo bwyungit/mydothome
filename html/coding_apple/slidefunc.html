@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slidefunc</title>
+    <link rel="stylesheet" href="slide.css">
+</head>
+
+<body>
+    <div class="home">
+        <div class="container">
+            <div>
+                <div class="inner"><img src="./img/slide1.jpg" alt="slide1.jpg"></div>
+            </div>
+            <div>
+                <div class="inner"><img src="./img/slide2.jpg" alt="slide2.jpg"></div>
+            </div>
+            <div>
+                <div class="inner"><img src="./img/slide3.jpg" alt="slide3.jpg"></div>
+            </div>
+        </div>
+    </div>
+    <button class="btn1 btn">1</button>
+    <button class="btn2 btn">2</button>
+    <button class="btn3 btn">3</button>
+  
+</body>
+<script>
+
+    let button1 = document.querySelector('.btn1');
+    let button2 = document.querySelector('.btn2');
+    let button3 = document.querySelector('.btn3');
+    
+    // button2.firstChild.nodeValue
+    
+
+
+    button1.addEventListener('click', move =>this)
+    button2.addEventListener('click', move =>this)
+    button3.addEventListener('click', move =>this)
+
+    // Document.querySelector('btn')addEventListener('click', move(this))
+
+    function move1(){
+        document.querySelector('.container').style.transform = "translate(0vw)";
+    }
+    function move2(){
+        document.querySelector('.container').style.transform = "translate(-100vw)";
+    }
+    function move3(){
+        document.querySelector('.container').style.transform = "translate(-200vw)";
+    }
+
+
+
+    function move(num) {
+        let arr = ['translate(0vw)', 'translate(-100vw)', 'translate(-200vw)']
+        console.log(num)
+
+        if (num.firstChild.nodeValue == '1') {document.querySelector('.container').style.transform = arr[0];}
+        if (num.firstChild.nodeValue == '2') {document.querySelector('.container').style.transform = arr[1];}
+        if (num.firstChild.nodeValue == '3') {document.querySelector('.container').style.transform = arr[2];}
+    }
+</script>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+   
+    <title>css animation</title>
+    <style>
+        #redSquare{
+            margin-left: 30%;
+            width: 200px;
+            height: 200px;
+            
+            /* margin: auto; */
+            background: red;
+            /* animation-name: TopDown;
+            animation-duration: 1s; */
+            animation: TopDown 1s infinite alternate cubic-bezier(0,.69,.31,.99) ;
+
+        }
+
+        @keyframes TopDown{
+            from{ margin-top: 0xp; }
+            to{ margin-top: 200px; }
+        }
+    </style>
+</head>
+<body>
+    <div id="redSquare"></div>
+    
+</body>
+</html>

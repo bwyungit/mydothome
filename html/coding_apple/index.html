@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding_apple</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <h2 id="hello">안녕하세요</h2>
+    
+    <div class="alert-box" id="alert">
+        <p id="title">Alert 박스 </p>
+        <!-- <button onclick="modifyAlert('','none')">닫기</button> -->
+        <button id="closeMe" >닫기</button>
+    </div>
+
+    <button onclick="modifyAlert('아이디입력하세요','block')">버튼1</button>
+    <button onclick="modifyAlert('비밀번호입력하세요','block')">버튼2</button>
+
+    <script>
+        //doc is called as selector
+        let doc =document.getElementById('hello');
+        doc.innerHTML='안녕하신가요';
+        doc.style.fontSize='50px';
+        doc.style.color='red';
+        
+        function modifyAlert(name,contents){
+            document.getElementById('title').innerHTML=name;
+            document.getElementById('alert').style.display=contents;
+            //console.log(name,contnets);
+        }
+            
+        function showAlert(){
+            document.getElementById('alert').style.display='block';
+            //alert.onclick=보이기(Me);
+        }
+
+        function 보이기(obj){
+            obj.style.display='block'
+        }
+
+        function hideAlert(){
+            document.getElementById('alert').style.display='none';
+            //console.log("숨깁니다");
+        }
+        // 이벤트 : click, keydown, mouseover, scroll
+        //document.getElementById('close').addEventListener('click',hideAlert);
+        //document.getElementById('close').onclick = hideAlert;
+        //Close.onclick =hideAlert; //Id값을 부여할 때 자바스크립트 명명법에 따라 단어 연결될 때 첫번째는 대문자로 할 것. 만약 한단어로 명명할 때 자바스크립트 함수명과 중복되면 대문자로 시작할 것. close라고 명명하면 에러발생함. 
+        closeMe.onclick = hideAlert;
+
+
+
+    </script>
+</body>
+</html>
