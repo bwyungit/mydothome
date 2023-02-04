@@ -81,7 +81,7 @@ caption {
 }
 
 .board_list thead tr th {
-    border-bottom: 3px solid green;
+     /* border-bottom: 3px solid green;  */
 }
 
 .board_list td {

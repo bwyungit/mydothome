@@ -1,0 +1,175 @@
+
+* {
+  margin: 0;
+  padding: 0;  
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul, li {
+    list-style: none;
+}
+
+
+/* 1. header */
+
+header {
+    
+    border-bottom: 2px solid #ddd;
+}
+
+header > div {
+    width: 90%;
+    min-width: 1000px;
+    max-width: 1200px;
+    height: 80px;
+    margin: 0 auto;
+}
+
+header .log {
+    float: left;   /* 왼쪽으로 떠라*/
+}
+
+header .log img {
+    height: 60px;
+    margin-top: 10px;
+}
+
+header .gnb {
+    float: right;/* 오른쪽으로 떠라*/
+}
+
+header .gnb li {
+    display: inline-block;
+    margin-top: 28px;
+    margin-left: 30px;
+}
+
+header .gnb li:first-child {
+    margin-left: 0;
+}
+
+/* 2. container */
+  
+/* 2.1 idx_top */
+  #idx_top {
+    width: 100%;
+    padding: 100px 0;
+    background: url(../img/flora.jpg) no-repeat 50% 50% /cover;
+    text-align: center;
+  }
+
+  #idx_top strong,
+  #idx_top p {
+    color: #fff;
+  }
+
+  #idx_top strong {
+    font-size: 60px;
+    letter-spacing: -5px;
+  }
+
+  #idx_top strong span {
+    color: yellow;
+  }
+
+  #idx_top p {
+    margin-top: 20px;
+    font-size: 20px;
+  }
+
+
+/* 2.2 idx_board_wrap */
+
+#idx_board_wrap {
+    padding: 50px 0;
+    background: #ddd;
+}
+
+#idx_board_wrap > div {
+    width: 90%;
+    min-width: 1000px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-size: 0;
+}
+
+.idx_board {
+    display: inline-block;
+    width: 48%;
+    background: #fff;
+    /* background: red; */
+}
+
+#idx_board_wrap > div > div:nth-child(even) {
+    margin-left: 4%;
+}
+
+#idx_board_wrap > div > div:nth-child(3),
+#idx_board_wrap > div > div:nth-child(4) {
+    margin-top: 40px;
+}
+
+
+
+.idx_board .title {
+    position: relative;
+    padding: 20px;
+    border-bottom: 1px solid rgb(170, 141, 141);
+}
+
+.idx_board .title a {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.idx_board .title .name {
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -2px;
+}
+
+.idx_board .title .more  {
+    position: absolute;
+    top: 24px;
+    right: 20px;
+}
+
+.idx_board .title .more img {
+    width: 24px;
+    margin-left: 20px;
+}
+
+.idx_board .list {
+    padding: 20px;
+}
+
+.idx_board .list ul li {
+    margin-top: 10px;
+    padding-left: 12px;
+    background: url(../img/dot.png) no-repeat 0 5px /10px;
+    font-size: 0;
+}
+.idx_board .list ul li:first-child {
+    margin-top: 0;
+} 
+
+.idx_board .list a,
+.idx_board .list span {
+    display: inline-block;
+    vertical-align: middle;
+}  
+
+.idx_board .list a {
+    width: 80%;
+    font-size: 14px;
+}  
+.idx_board .list span {
+    width: 20%;
+    text-align: right;
+    font-size: 12px;
+    color:#777;
+}  

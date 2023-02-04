@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.tabmenu_wrap {
+    font-size: 0;
+}
+
+.tabmenu_wrap input[type="radio"] {
+    display: none;
+}
+
+.tabmenu_wrap label {
+    display: inline-block;
+    width: 33%;
+    padding: 20px 0;
+    background: silver;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.tabmenu_wrap label:nth-of-type(2) {
+    width: 34%;
+}
+
+/* 자손선택자( 공백으로 표시 )와 자식선택자( > 표시 ) 
+   a b : a 선택자 안에 있는 모든 b
+   a > b : a 선택자 안에 있는 직접 자식들 중에 모든 b
+*/
+
+.tabmenu_wrap > div {
+    display: none;
+    min-height: 300px;
+    padding-top: 20%;
+    background: blue;
+    font-size: 60px;
+    color: #fff;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* 탭1이 선택되면 탭1 영역이 금색으로 바뀌어야 해 */
+.tabmenu_wrap input[type="radio"]:checked + label {
+    background: gold;
+}
+
+
+/* 탭이 선택되면 해당내용이 보여야 해 
+   참고: ~ (해당요소의 아래 형제들)
+*/
+
+#tab1:checked ~ .cont1,
+#tab2:checked ~ .cont2,
+#tab3:checked ~ .cont3 {
+    display: block;
+    background-color: gold;
+}
+
