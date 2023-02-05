@@ -1,0 +1,28 @@
+.tbl {width: 500px; border-collapse: collapse;}
+
+.tbl caption{display: none;}
+
+.tbl th, .tbl td {
+    padding: 20px 0; border: 1px solid #999;
+}
+
+.tbl td {
+    text-align: center;
+}
+
+.tbl thead th {     background: yellow;}
+.tbl thead th:first-child {background: blue; color: white;}
+
+
+/* 
+1. .tbl td .point : .tbl td의 자손 중에 .point
+2. .tbl td.point  : .tbl td 중에 .point
+*/
+.tbl td.point {
+    font-size: 50px;
+    font-weight: 600;
+}
+
+.tbl tbody th {
+    background: lime;
+}
