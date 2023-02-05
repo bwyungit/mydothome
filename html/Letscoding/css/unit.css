@@ -1,0 +1,20 @@
+html {font-size: 10px;}
+.wrap {font-size: 1px;}
+
+
+.wrap .px {    font-size: 20px;}
+
+.wrap .em {    font-size: 20em;}
+
+.wrap .rem {    font-size: 1rem;}
+
+.wrap .rem .type1 {    font-size: 2rem;}
+.wrap .rem .type2 {    font-size: 2.5rem;}
+.wrap .rem .type3 {    font-size: 3rem;}
+
+
+/* 1. px : 절대적인 크기 화소의 수로 크기를 나타냄
+   2. em : 해당요소의 부모의 크기 기준으로 몇배수로 크기를 나타냄
+   3. rem : 최상위 부모(<html>)의 크기 기준으로 몇배수로 크기를 나타냄
+
+*/
