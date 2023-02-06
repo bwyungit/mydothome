@@ -2,15 +2,11 @@
 
 .tbl caption{display: none;}
 
-.tbl th, .tbl td {
-    padding: 20px 0; border: 1px solid #999;
-}
+.tbl th, .tbl td { padding: 20px 0; border: 1px solid #999;}
 
-.tbl td {
-    text-align: center;
-}
+.tbl td { text-align: center;}
 
-.tbl thead th {     background: yellow;}
+.tbl thead th { background: yellow;}
 .tbl thead th:first-child {background: blue; color: white;}
 
 
@@ -23,6 +19,4 @@
     font-weight: 600;
 }
 
-.tbl tbody th {
-    background: lime;
-}
+.tbl tbody th { background: lime;}
