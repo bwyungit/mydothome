@@ -1,0 +1,126 @@
+* {margin: 0;padding: 0;}
+
+.history_wrap {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: 50px auto;
+    overflow-y: auto;
+}
+
+.history_wrap::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    display: block;
+    width: 1px;
+    height: 100%;
+    background: #ccc;
+}
+
+.history_wrap .item {
+    clear: both;
+    padding-top: 40px;
+}
+
+.history_wrap .item:first-child {
+    padding-top: 0;
+}
+
+.history_wrap .item .cont,
+.history_wrap .item .image{
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.history_wrap .item .cont {
+    float: right;
+    position: relative;
+    padding-left: 5%;
+    
+}
+
+/* item 중에 짝수번째 안에 있는 .cont */
+.history_wrap .item:nth-child(even) .cont {
+    float: left;
+    padding-left: 0%;
+    padding-right: 5%;
+}
+
+
+.history_wrap .item .cont strong {
+    display: block;
+    /* position: relative; */
+    margin-bottom: 20px;
+    font-size: 40px;
+    color: #6161e5;
+}
+
+.history_wrap .item .cont strong::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 28px;
+    left: 5px;
+    width: 30px;
+    height: 2px;
+    background: #ccc;
+}
+
+.history_wrap .item:nth-child(even) .cont strong::before {
+    left: auto;  /* 이미 left가 잡혀있으니까 풀어줘야함 */
+    right: 5px;
+}
+
+
+
+
+.history_wrap .item .cont dl {
+    font-size: 0;
+    margin-top: 10px;
+}
+
+.history_wrap .item .cont dl:first-child {
+    margin-top: 0;
+}
+
+.history_wrap .item .cont dt, 
+.history_wrap .item .cont dd {
+    display: inline-block;
+    font-size: 14px;
+
+}
+
+.history_wrap .item .cont dt {
+    width: 30%;
+    vertical-align: top;
+    font-weight: 600;
+    color: #999;
+}
+
+.history_wrap .item .cont dd {
+    width: 70%;
+    word-break: keep-all;
+
+}
+
+.history_wrap .item .image {
+    float: left;
+    padding-right: 5%; 
+} 
+
+/* item 중에 짝수번째 안에 있는 .imange */
+.history_wrap .item:nth-child(even) .image {
+    float: right;
+    padding-right: 0%; 
+    padding-left: 5%; 
+}
+
+
+
+.history_wrap .item .image img {
+    /* width: 200px; */
+    width: 100%;
+    border-radius: 10px;
+}

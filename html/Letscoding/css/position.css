@@ -1,0 +1,75 @@
+* {padding: 0;margin: 0;}
+
+
+.wrap {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin: 100px auto 0 auto;
+    background: yellow;
+    /* 가로 가운데 정렬 */
+    /* margin: 0 auto;   */
+    padding: 50px;
+    /* padding 값이 있으면 padding값만큼 커지는데 커지지 말아라*/
+    box-sizing: border-box;  
+    
+}
+
+.wrap2 {
+    /* position: relative; */
+    width: 300px;
+    height: 300px;
+    background: skyblue;
+
+
+}
+
+.object1 {
+    position: absolute;
+
+    /* top과 bottom이 충돌될 때는 top이 우선*/
+    /* top: 100px; */
+    /* bottom: 100px; */
+    top: 0;
+
+    /* left와 right가 충돌될 때는 left가 우선 */
+    right: 0;
+    /* right: 100px; */
+    width: 100px;
+    height: 100px;
+    background: pink;
+
+    /* z-index 는 형제들중에 배열하는 순서
+       숫자값이 클수록 나중에 배치되므로 화면 위로 나타남 
+       해당요소에 position 값이 있어야 함.*/
+    z-index: 2;
+}
+
+
+/* position: absolute */
+/* 1. 자식 div가 absolute면 부모div는 height 값을 잡지 못한다.
+  단 가로값은 div는 기본적으로 block이니까 화면전체를 차지한다.
+   2. absolute 는 기준값이 있어야 하는데 부모, 부모의 부모, 부모의 부모 ....계속
+      기준값을 찾다가 없으면 body(or html)까지 올라감.
+   3. 단 조상 중에 position: relative 가 설정 되면 그것을 기준으로 삼은다.
+*/
+
+.object2 {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    width: 100px;
+    height: 100px;
+    background: orange;
+    z-index: 1;
+}
+
+.object3 {
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 100px;
+    height: 100px;
+    background: greenyellow;
+    z-index: 3;
+}

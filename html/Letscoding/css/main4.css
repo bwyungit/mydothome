@@ -58,10 +58,13 @@ a:hover{text-decoration: underline;}
 
 .cell {	border: 1px solid red;		padding: 5px;}
 .head {	
+	/* display: block; */
     line-height: 1em;
     text-align: center; 
     vertical-align: middle;
     font-weight: 600;
+	/* padding: 100px;
+	box-sizing: border-box; */
    
 }
 
