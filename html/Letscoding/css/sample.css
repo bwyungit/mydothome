@@ -1,0 +1,78 @@
+* {margin: 0; padding: 0;}
+html {font-size: 10px;}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.articles {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    border-radius: 15px;
+    padding: 40px;
+    box-sizing: border-box;
+    background: #556ded;
+}
+
+.articles .title {
+    text-align: center;
+    color: #fff;
+}
+
+
+/* strong 태그는 inline태그 
+   p 태그는 block 태그
+   그래서 
+   block 태그에 margin값을 주는 것이 종아요 예쁜 선생님 말씀
+   */
+.articles .title strong {
+    font-size: 3.2rem;
+}
+.articles .title p {
+    margin-top: 20px;
+    line-height: 150%;
+    font-size: 1.6rem;
+}
+
+.articles .item {
+    position: relative;
+    margin-top: 20px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 20px;
+}
+.articles .item:first-child {
+    margin-top: 0;
+}
+
+.articles .items {
+    margin-top: 30px;
+}
+
+.articles .items strong {
+    font-size: 2rem;
+}
+
+.articles .items p {
+    margin: 10px 0;
+    font-size: 1.2rem;
+}
+
+.articles .items span,
+.articles .items a {
+    font-size: 1.2rem;
+    color: #999;
+}
+
+.articles .items span {
+
+}
+
+.articles .items a {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    text-decoration: underline;
+}
