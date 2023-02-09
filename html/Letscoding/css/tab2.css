@@ -50,17 +50,40 @@
     background: gold;
 }
 
+#tab1:checked ~ .cont1{    display: block;    background: gold;}
+#tab2:checked ~ .cont2{    display: block;    background: gold;}
+#tab3:checked ~ .cont3 {    display: block;    background: gold;}
+
+.tabmenu_wrap input[type="radio"]:hover + label {
+    background: gold;
+}
+
+#tab1:hover ~ .cont1 {
+    display: block;
+    background: gold;
+}
+
+#tab2:hover ~ .cont2 {
+    display: block;
+    background: gold;
+}
+#tab3:hover ~ .cont3 {
+    display: block;
+    background: gold;
+}
+
+
 
 /* 탭이 선택되면 해당내용이 보여야 해 
    참고: ~ (해당요소의 아래 형제들)
 */
 
-#tab1:checked ~ .cont1,
+/* #tab1:checked ~ .cont1,
 #tab2:checked ~ .cont2,
 #tab3:checked ~ .cont3 {
     display: block;
     background-color: gold;
-}
+} */
 
 /* #tab1:hover ~ .cont1,
 #tab2:hover ~ .cont2,

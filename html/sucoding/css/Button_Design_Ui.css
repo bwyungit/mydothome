@@ -22,11 +22,11 @@ body{
 
 }
 
-.btn-swap{
+.btn-swap span {
     position: absolute;
     top: 0;
     left: 0;
-    background: #ed4848;
+ 
     padding: 20px 40px;
     width: 100%;
     opacity: 0;
@@ -39,5 +39,16 @@ body{
 }
 
 .btn-swap::before{
-    
+    content: "";
+    width: 0%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #ed4848;
+    transition: width 0.5s;
+}
+
+.btn-swap:hover::before {
+    width: 100%;
 }
