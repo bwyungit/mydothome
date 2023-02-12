@@ -19,14 +19,14 @@ body {    background: #325cb2;}
     padding-bottom: 12px;
 }
 
-.wrap form {    margin-top: 30px;}
+.wrap form {margin-top: 30px;}
 
 .wrap dl{
     margin-top: 15px;
     font-size: 0;
 }
 
-.wrap dl:first-child{margin-top: 0;}
+.wrap dl:first-child{ margin-top: 0;}
 
 
 .wrap dt, 
@@ -36,8 +36,8 @@ body {    background: #325cb2;}
     font-size: 14px;
 }
 
-.wrap dt {    width: 25%;}
-.wrap dd {    width: 75%;}
+.wrap dt { width: 25%;}
+.wrap dd { width: 75%;}
 
 .wrap input[type="text"],
 .wrap input[type="password"],
@@ -78,7 +78,7 @@ body {    background: #325cb2;}
     cursor: pointer;
 }
 
-.wrap input[type="submit"]:hover {    color: pink;}
+.wrap input[type="submit"]:hover {color: #000; font-size: 40px;}
 
 /*
 .fruit {
@@ -88,7 +88,7 @@ body {    background: #325cb2;}
 }
  */
 
- .wrap input[type="radio"]{display: none; }
+ .wrap input[type="radio"]{ display: none; }
  .wrap input[type="radio"] + label {
     margin-left: 20px;
     padding-left: 20px;

@@ -56,15 +56,15 @@ a:hover{text-decoration: underline;}
 	grid-gap:10px;
 }
 
-.cell {	border: 1px solid red;		padding: 5px;}
+.cell {	border: 1px solid red;	padding: 5px;}
 .head {	
 	/* display: block; */
-    line-height: 1em;
+    line-height: 1rem;
     text-align: center; 
     vertical-align: middle;
     font-weight: 600;
-	/* padding: 100px;
-	box-sizing: border-box; */
+	/* padding: 12px;  */
+    /* box-sizing: border-box; */
    
 }
 

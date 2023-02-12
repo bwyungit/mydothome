@@ -1,0 +1,44 @@
+
+.container {
+    background: beige;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: row;
+    /* 지정하지 않으면 기본값 : row */
+    /* row row-reverse column column-reverse */
+
+    flex-wrap: nowrap;
+    /* flex-flow: column nowrap; */
+    
+    justify-content: space-around ; 
+    /* justify-content : 중심축 main axis 에서 정럴 */
+    /* space-around   space-between  space-evenly */
+
+    align-items: center;
+    /* align-items : 반대축 cross axis 에서 정렬 */
+    /* top center bottom baseline */
+}
+
+.item {
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+    text-align: center;
+    padding-top: 8px;
+    box-sizing: border-box;
+}
+
+/* color tool 
+https://m2.material.io/resources/color/#!/?view.left=0&view.right=0 */
+
+.item1 { background: #ef9a9a;}
+.item2 { background: #f48fb1;}
+.item3 { background: #ce93d8;}
+.item4 { background: #b39ddb;}
+.item5 { background: #90caf9;}
+.item6 { background: #a5d6a7;}
+.item7 { background: #e6ee9c;}
+.item8 { background: #fff59d;}
+.item9 { background: #ffcc80;}
+.item10 { background: #ffab91;}
