@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CSS 단위</title>
+        <style>
+            h1{ font-size: 32px; background-color: aquamarine; }
+            h3{ font-size: 20px; background-color: lightblue; }
+            p{
+                font-size: 16px;
+                text-align: justify;
+                background-color: pink;
+            }
+
+            /* desktop 규격 */
+            @media screen and (min-width:1024px) {
+                body{ background-color: lightblue;}
+            }
+
+            /* tablet 규격 */
+            @media screen and (max-width:1023px) {
+                body{ background-color: pink;}
+            }
+            /* tablet 규격 */
+            @media screen and (max-width:540px) {
+                body{ background-color: navy;}
+            }
+
+
+
+        </style>
+    </head>
+    <body>
+        <h1>가장 큰 제목</h1>
+        <h3>작은 제목</h3>
+        <p>
+            파란 자랑처럼 차 슬퍼하는 않은 봅니다. 부끄러운 시와 이름과, 가을 아무 않은 있습니다. 한 아스라히 그리고 있습니다. 내 무엇인지 청춘이 토끼, 지나가는 시인의 이런 된 별에도 봅니다.
+        </p>
+    </body>
+</html>

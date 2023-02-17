@@ -1,19 +1,48 @@
-<style>
-    * {margin:0;padding:0;border:0;}
-    .tab_content {position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:12px;} /* 화면의 가운데 정렬 */
-    
-    input[type="radio"] {display:none;} /* input을 안보이게 처리 */
-    input[type="radio"] + label {display:inline-block;padding:20px;background:#ccc;color:#999;font-size:14px;cursor:pointer;} /* label에 대한 버튼속성 */
-    input[type="radio"]:checked + label {background:#aaa;color:#000;}
-    
-    .conbox {width:450px;height:400px;background:#aaa;margin:0 auto; font-size:large; text-align: center;      display:none;} 
-    
-    /* 컨텐츠 영역 */
-    input[id="tab01"]:checked ~ .con1 {display:block;} /* 인풋에 체크가 해당 요소보이게 설정 */
-    input[id="tab02"]:checked ~ .con2 {display:block;}
-    input[id="tab03"]:checked ~ .con3 {display:block;}
-    </style>
-    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {margin:0;padding:0;border:0;}
+        .tab_content {
+            position:absolute;
+            top:50%;left:50%;
+            transform:translate(-50%,-50%);
+            font-size:12px;} /* 화면의 가운데 정렬 */
+        
+        input[type="radio"] {display:none;} /* input을 안보이게 처리 */
+        input[type="radio"] + label {
+            display:inline-block;
+            padding:20px;
+            background:#ccc;
+            color:#999;
+            font-size:14px;
+            cursor:pointer;
+        } /* label에 대한 버튼속성 */
+
+        input[type="radio"]:checked + label {background:#aaa;color:#000;}
+        
+        .conbox {
+            width:100%;
+            height:400px;
+            background:#aaa;
+            margin:0 auto; 
+            font-size:large; 
+            text-align: center;      
+            display:none;} 
+        
+
+        /* 컨텐츠 영역 */
+        input[id="tab01"]:checked ~ .con1 {display:block;} /* 인풋에 체크가 해당 요소보이게 설정 */
+        input[id="tab02"]:checked ~ .con2 {display:block;}
+        input[id="tab03"]:checked ~ .con3 {display:block;}
+        </style>
+</head>
+<body>
+       
     <div class="tab_content">
     
         <input type="radio" name="tabmenu" id="tab01" checked>
@@ -30,3 +59,5 @@
         <div class="conbox con3">컨텐츠탭 내용03</div>
     
     </div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <!-- 뷰포트메타태그 -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>유동형그리드</title>
+        <style>
+            *{ padding: 0; margin: 0; }
+            .wrap{
+                width: 1200px; max-width: 100%;
+                height: 300px; margin: 0 auto;
+            }
+            .wrap > div{
+                float: left; height: 300px;
+                line-height: 300px;
+                text-align: center;
+                font-size: 50px; color: white;
+            }
+            .wrap > .box01{ background: red; }
+            .wrap > .box02{ background: blue; }
+            .wrap > .box03{ background: green; }
+            .wrap > .box04{ background: yellow; }
+
+
+            /* pc */
+            @media screen and (min-width: 1024px){
+                /* 4컬럼 그리드 */
+                .col-p-01{ width: 25%; } /* 1/4 */
+                .col-p-02{ width: 50%; } /* 2/4 */
+                .col-p-03{ width: 75%; } /* 3/4 */
+                .col-p-04{ width: 100%; } /* 4/4 */
+            }
+
+            /* tablet */
+            @media screen and (max-width: 1023px){
+                /* 4컬럼 그리드 */
+                .col-t-01{ width: 25%; } /* 1/4 */
+                .col-t-02{ width: 50%; } /* 2/4 */
+                .col-t-03{ width: 75%; } /* 3/4 */
+                .col-t-04{ width: 100%; } /* 4/4 */
+            }
+
+            /* mobile */
+            @media screen and (max-width: 540px){
+                /* 4컬럼 그리드 */
+                .col-m-01{ width: 25%; } /* 1/4 */
+                .col-m-02{ width: 50%; } /* 2/4 */
+                .col-m-03{ width: 75%; } /* 3/4 */
+                .col-m-04{ width: 100%; } /* 4/4 */
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrap">
+            <div class="box01 col-p-01 col-t-02 col-m-04">박스1</div>
+            <div class="box02 col-p-01 col-t-02 col-m-04">박스2</div>
+            <div class="box03 col-p-01 col-t-02 col-m-04">박스3</div>
+            <div class="box04 col-p-01 col-t-02 col-m-04">박스4</div>
+        </div>
+    </body>
+</html>

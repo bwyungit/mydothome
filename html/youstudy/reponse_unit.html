@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CSS 단위</title>
+        <style>
+            /* 
+                1vw : 디바이스 폭의 1%
+                1vh : 디바이스 높이의 1%
+            */
+            .text01{ font-size: 30px; } /* 절대적단위처리 */
+            .text02{ font-size: 3vw; } /* 상대적 - 가로폭이 1000px일때 30px */
+            div{
+                width: 30vw; /* 가로폭이 1000px일때 300px */
+                height: 100px;
+                background-color: orange;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 class="text01">제목태그 - px단위사용</h1>
+        <h1 class="text02">제목태그 - vw단위사용</h1>
+        <div>구역태그</div>
+    </body>
+</html>

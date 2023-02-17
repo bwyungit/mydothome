@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>CSS 단위</title>
+        <style>
+            /* 절대적 단위사용 */
+            *{ font-size: 20px; }
+
+            /* 등배단위 사이즈 - 기준으로부터 몇배 */
+
+            /* em : 기준이 부모가되서 거기에 대한 등배단위 */
+            .box01{ font-size: 10px; }
+            .box01 h1{ font-size: 3em; } /* 30px */
+            .box01 p{ font-size: 2em; } /* 20px */
+
+            /* rem : 기준이 루트(html)이 되서 거기에 대한 등배단위 */
+            .box02{ font-size: 10px; }
+            .box02 h1{ font-size: 3rem; } /* 60px */
+            .box02 p{ font-size: 2rem; } /* 40px */
+        </style>
+    </head>
+    <body>
+        <div class="box01">
+            <h1>제목태그</h1>
+            <p>문단태그</p>
+        </div>
+        <hr>
+        <div class="box02">
+            <h1>제목태그</h1>
+            <p>문단태그</p>
+        </div>
+    </body>
+</html>
